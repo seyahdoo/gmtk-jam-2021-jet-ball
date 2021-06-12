@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 357009283}
   - component: {fileID: 357009284}
   - component: {fileID: 357009285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ball-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ MonoBehaviour:
   inputToForceRatio: 60
   stickableLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!58 &357009285
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 749784237}
   - component: {fileID: 749784232}
   - component: {fileID: 749784238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ball-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ MonoBehaviour:
   inputToForceRatio: 60
   stickableLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!58 &749784238
 CircleCollider2D:
   m_ObjectHideFlags: 0
