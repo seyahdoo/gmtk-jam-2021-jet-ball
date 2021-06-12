@@ -10,10 +10,18 @@ public class Ball : MonoBehaviour {
     public bool stickButtonPressed = false;
     public InputSettings inputSettings;
     public Rigidbody2D body;
+    public Rigidbody2D otherBody;
+    public DistanceJoint2D Joint2D;
+    public float powerDistanceError = .4f;
+    public float powerFillSpeed = 5f;
+    public float flingMultiplier = 1f;
+    public float maxPower = 5f;
     
     public float maxFuel = 10f;
     public float inputToForceRatio = 1f;
     private float _currentFuel;
+    private float _distance;
+    [SerializeField] private float _power = 0f;
     private void OnEnable() {
         inputSettings.Enable();
     }
@@ -22,8 +30,8 @@ public class Ball : MonoBehaviour {
     }
     private void Awake() {
         inputSettings = new InputSettings();
-        body = GetComponent<Rigidbody2D>();
         _currentFuel = maxFuel;
+        _distance = Joint2D.distance;
     }
     private void Update() {
         if (isLeft) {
@@ -39,9 +47,22 @@ public class Ball : MonoBehaviour {
         if (stickButtonPressed) {
             body.velocity = Vector2.zero;
             body.angularVelocity = 0f;
+            _power = 0f;
             body.isKinematic = true;
         }
         else {
+            var currentDistance = Vector3.Distance(body.position, otherBody.position);
+            if (Mathf.Abs(currentDistance - _distance) < powerDistanceError 
+                && Vector2.Dot((otherBody.position - body.position).normalized, input.normalized) < 0) {
+                _power += powerFillSpeed * Time.fixedDeltaTime;
+                _power = Mathf.Clamp(_power, 0f, maxPower);
+            }
+            else {
+                if (_power > .1f) {
+                    body.AddForce((otherBody.position - body.position).normalized * (_power * flingMultiplier), ForceMode2D.Impulse);
+                    _power = 0f;
+                }
+            }
             body.isKinematic = false;
             var force = input * inputToForceRatio;
             body.AddForce(force);
