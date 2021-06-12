@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 357009280}
   - component: {fileID: 357009283}
   - component: {fileID: 357009284}
+  - component: {fileID: 357009285}
   m_Layer: 0
   m_Name: ball-right
   m_TagString: Untagged
@@ -405,16 +406,26 @@ MonoBehaviour:
   body: {fileID: 357009280}
   otherBody: {fileID: 749784233}
   Joint2D: {fileID: 749784232}
-  powerDistanceError: 0.4
-  powerFillSpeed: 5
-  flingMultiplier: 30
-  maxPower: 3
-  maxFuel: 5
-  fuelFillSpeed: 3
   inputToForceRatio: 60
-  fuelUseSpeed: 5
-  _currentFuel: 0
-  _curentPower: 0
+  stickableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!58 &357009285
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357009279}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.82
 --- !u!1 &698935376
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +576,7 @@ GameObject:
   - component: {fileID: 749784236}
   - component: {fileID: 749784237}
   - component: {fileID: 749784232}
+  - component: {fileID: 749784238}
   m_Layer: 0
   m_Name: ball-left
   m_TagString: Untagged
@@ -711,16 +723,26 @@ MonoBehaviour:
   body: {fileID: 749784233}
   otherBody: {fileID: 357009280}
   Joint2D: {fileID: 749784232}
-  powerDistanceError: 0.4
-  powerFillSpeed: 5
-  flingMultiplier: 30
-  maxPower: 3
-  maxFuel: 5
-  fuelFillSpeed: 3
   inputToForceRatio: 60
-  fuelUseSpeed: 5
-  _currentFuel: 0
-  _curentPower: 0
+  stickableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!58 &749784238
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749784231}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.82
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

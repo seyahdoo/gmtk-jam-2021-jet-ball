@@ -13,18 +13,10 @@ public class Ball : MonoBehaviour {
     public Rigidbody2D body;
     public Rigidbody2D otherBody;
     public DistanceJoint2D Joint2D;
-    public float powerDistanceError = .4f;
-    public float powerFillSpeed = 5f;
-    public float flingMultiplier = 1f;
-    public float maxPower = 5f;
-    public float maxFuel = 10f;
-    public float fuelFillSpeed = 5f;
     public float inputToForceRatio = 1f;
-    public float fuelUseSpeed = 3;
-
-    private float _distance;
-    [SerializeField] private float _currentFuel;
-    [SerializeField] private float _curentPower = 0f;
+    public LayerMask stickableLayers;
+    
+    private HashSet<Collider2D> _stickableSurfaces = new HashSet<Collider2D>();
     private void OnEnable() {
         inputSettings.Enable();
     }
@@ -33,8 +25,6 @@ public class Ball : MonoBehaviour {
     }
     private void Awake() {
         inputSettings = new InputSettings();
-        _currentFuel = maxFuel;
-        _distance = Joint2D.distance;
     }
     private void Update() {
         if (isLeft) {
@@ -47,34 +37,28 @@ public class Ball : MonoBehaviour {
         }
     }
     private void FixedUpdate() {
-        if (stickButtonPressed) {
+        if (stickButtonPressed && _stickableSurfaces.Count >= 1) {
             body.velocity = Vector2.zero;
             body.angularVelocity = 0f;
-            _curentPower = 0f;
-            _currentFuel += fuelFillSpeed;
-            _currentFuel = Mathf.Clamp(_currentFuel, 0f, maxFuel);
             body.isKinematic = true;
         }
         else {
-            var currentDistance = Vector3.Distance(body.position, otherBody.position);
-            if (Mathf.Abs(currentDistance - _distance) < powerDistanceError 
-                && Vector2.Dot((otherBody.position - body.position).normalized, input.normalized) < 0) {
-                _curentPower += powerFillSpeed * Time.fixedDeltaTime;
-                _curentPower = Mathf.Clamp(_curentPower, 0f, maxPower);
-            }
-            else {
-                if (_curentPower > .1f) {
-                    body.AddForce((otherBody.position - body.position).normalized * (_curentPower * flingMultiplier), ForceMode2D.Impulse);
-                    _curentPower = 0f;
-                }
-            }
-            _currentFuel -= input.magnitude * fuelUseSpeed * Time.fixedDeltaTime;
-            _currentFuel = Mathf.Clamp(_currentFuel, 0, maxFuel);
             body.isKinematic = false;
-            if (_currentFuel > 0.1f) {
-                var force = input * inputToForceRatio;
-                body.AddForce(force);
-            }
+            var force = input * inputToForceRatio;
+            body.AddForce(force);
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (LayerMaskContains(stickableLayers, other.gameObject.layer)) {
+            _stickableSurfaces.Add(other);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) {
+        if (LayerMaskContains(stickableLayers, other.gameObject.layer)) {
+            _stickableSurfaces.Remove(other);
+        }
+    }
+    public bool LayerMaskContains(LayerMask layerMask, int layer) {
+        return layerMask == (layerMask | (1 << layer));
     }
 }

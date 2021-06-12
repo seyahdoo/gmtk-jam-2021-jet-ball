@@ -17,7 +17,7 @@
                     "name": "LeftStick",
                     "type": "Value",
                     "id": "2672034c-1dbc-4336-990e-3c67595395ce",
-                    "expectedControlType": "DiscreteButton",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
@@ -33,7 +33,7 @@
                     "name": "RightStick",
                     "type": "Value",
                     "id": "7fd088be-9e4d-45dc-b935-2f2373556f1f",
-                    "expectedControlType": "DiscreteButton",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 }
@@ -41,8 +41,19 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "aa9d349a-823f-45ed-bcd8-c6802ef8b565",
-                    "path": "<Gamepad>/leftStickPress",
+                    "id": "fd507ddd-eee4-4a13-8030-d844912b1f92",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "LeftStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea1551bb-d918-418f-8e13-eedf92ca6b50",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joypad",
@@ -52,11 +63,11 @@
                 },
                 {
                     "name": "",
-                    "id": "fd507ddd-eee4-4a13-8030-d844912b1f92",
-                    "path": "<Keyboard>/e",
+                    "id": "0985f5fa-6759-4f05-8ba3-ad8b7b8efb7e",
+                    "path": "<Gamepad>/leftStickPress",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Joypad",
                     "action": "LeftStick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -295,6 +306,17 @@
                 {
                     "name": "",
                     "id": "9a2ce47b-c38d-4235-9353-567208e36e16",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joypad",
+                    "action": "RightStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd7bb7e3-d164-4a02-9e97-3825b6aba729",
                     "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
