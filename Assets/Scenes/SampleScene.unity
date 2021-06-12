@@ -404,12 +404,11 @@ MonoBehaviour:
   input: {x: 0, y: 0}
   stickButtonPressed: 0
   body: {fileID: 357009280}
-  otherBody: {fileID: 749784233}
-  Joint2D: {fileID: 749784232}
   inputToForceRatio: 60
   stickableLayers:
     serializedVersion: 2
     m_Bits: 55
+  otherBall: {fileID: 749784237}
 --- !u!58 &357009285
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -721,12 +720,11 @@ MonoBehaviour:
   input: {x: 0, y: 0}
   stickButtonPressed: 0
   body: {fileID: 749784233}
-  otherBody: {fileID: 357009280}
-  Joint2D: {fileID: 749784232}
   inputToForceRatio: 60
   stickableLayers:
     serializedVersion: 2
     m_Bits: 55
+  otherBall: {fileID: 357009284}
 --- !u!58 &749784238
 CircleCollider2D:
   m_ObjectHideFlags: 0

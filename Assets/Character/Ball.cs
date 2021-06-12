@@ -11,12 +11,13 @@ public class Ball : MonoBehaviour {
     public bool stickButtonPressed = false;
     public InputSettings inputSettings;
     public Rigidbody2D body;
-    public Rigidbody2D otherBody;
-    public DistanceJoint2D Joint2D;
     public float inputToForceRatio = 1f;
     public LayerMask stickableLayers;
+    public Ball otherBall;
     
     private HashSet<Collider2D> _stickableSurfaces = new HashSet<Collider2D>();
+    private bool _sticked = false;
+    public bool Sticked => _sticked;
     private void OnEnable() {
         inputSettings.Enable();
     }
@@ -41,11 +42,15 @@ public class Ball : MonoBehaviour {
             body.velocity = Vector2.zero;
             body.angularVelocity = 0f;
             body.isKinematic = true;
+            _sticked = true;
         }
         else {
             body.isKinematic = false;
-            var force = input * inputToForceRatio;
-            body.AddForce(force);
+            _sticked = false;
+            if (otherBall.Sticked) {
+                var force = input * inputToForceRatio;
+                body.AddForce(force);
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D other) {
