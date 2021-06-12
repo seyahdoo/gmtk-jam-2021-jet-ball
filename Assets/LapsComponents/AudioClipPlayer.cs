@@ -2,27 +2,29 @@ using System.Collections.Generic;
 using LapsRuntime;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class AudioClipPlayer : LapsComponent {
-    public AudioClip[] startClips;
-    public AudioClip[] loopClips;
-    public AudioClip[] endClips;
-    public bool playOnAwake = true;
+    public AudioClip clip;
+    public bool playOnAwake = false;
     
     private AudioSource _audioSource;
     private void Awake() {
         _audioSource = GetComponent<AudioSource>();
-        if (_audioSource == null) {
-            _audioSource = this.gameObject.AddComponent<AudioSource>();
-        }
     }
     public void Play() {
-        
+        _audioSource.PlayOneShot(clip);
     }
     public void Stop() {
         
     }
     public void StopImmidiately() {
         
+    }
+    public override object HandleInput(int slotId, object parameter, LapsComponent eventSource) {
+        switch (slotId) {
+            case 0: Play(); return null;
+            default: return null;
+        }
     }
     public override void GetInputSlots(List<LogicSlot> slots) {
         slots.Add(new LogicSlot("play", 0));

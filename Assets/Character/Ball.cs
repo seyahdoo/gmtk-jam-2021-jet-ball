@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using LapsRuntime;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -61,16 +62,13 @@ public class Ball : MonoBehaviour {
         }
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        if (LayerMaskContains(stickableLayers, other.gameObject.layer)) {
+        if (LapsMath.LayerMaskContains(stickableLayers, other.gameObject.layer)) {
             _stickableSurfaces.Add(other);
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
-        if (LayerMaskContains(stickableLayers, other.gameObject.layer)) {
+        if (LapsMath.LayerMaskContains(stickableLayers, other.gameObject.layer)) {
             _stickableSurfaces.Remove(other);
         }
-    }
-    public bool LayerMaskContains(LayerMask layerMask, int layer) {
-        return layerMask == (layerMask | (1 << layer));
     }
 }
