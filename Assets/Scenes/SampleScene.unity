@@ -411,6 +411,7 @@ MonoBehaviour:
     m_Bits: 55
   otherBall: {fileID: 749784237}
   BallGraphic: {fileID: 1655413702}
+  impactToTriggerCrash: 1
 --- !u!58 &357009285
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -972,6 +973,7 @@ MonoBehaviour:
     m_Bits: 55
   otherBall: {fileID: 357009284}
   BallGraphic: {fileID: 501569280}
+  impactToTriggerCrash: 15
 --- !u!58 &749784238
 CircleCollider2D:
   m_ObjectHideFlags: 0

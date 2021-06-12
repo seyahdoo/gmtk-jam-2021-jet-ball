@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,15 +10,8 @@ public class BallGraphic : MonoBehaviour {
     public bool sticking;
     public SpriteRenderer spriteRenderer;
 
-    private int _currentSprite;
     private float _nextChangeTime;
     private bool _inStickSprite;
-    private State _state;
-    private enum State {
-        Sticking,
-        Crashed,
-        Neutral,
-    }
     private void Update() {
         if (sticking != _inStickSprite) {
             _nextChangeTime = Time.time + changeTime;
