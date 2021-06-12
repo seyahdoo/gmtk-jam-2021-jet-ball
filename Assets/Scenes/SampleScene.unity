@@ -226,7 +226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134168620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.1, y: 30.3, z: 0}
+  m_LocalPosition: {x: 23.2, y: 30.3, z: 0}
   m_LocalScale: {x: 1.2130866, y: 8.168324, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -407,11 +407,14 @@ MonoBehaviour:
   Joint2D: {fileID: 749784232}
   powerDistanceError: 0.4
   powerFillSpeed: 5
-  flingMultiplier: 4
+  flingMultiplier: 30
   maxPower: 3
-  maxFuel: 0
-  inputToForceRatio: 30
-  _power: 0
+  maxFuel: 5
+  fuelFillSpeed: 3
+  inputToForceRatio: 60
+  fuelUseSpeed: 5
+  _currentFuel: 0
+  _curentPower: 0
 --- !u!1 &698935376
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,11 +713,14 @@ MonoBehaviour:
   Joint2D: {fileID: 749784232}
   powerDistanceError: 0.4
   powerFillSpeed: 5
-  flingMultiplier: 4
+  flingMultiplier: 30
   maxPower: 3
-  maxFuel: 0
-  inputToForceRatio: 30
-  _power: 0
+  maxFuel: 5
+  fuelFillSpeed: 3
+  inputToForceRatio: 60
+  fuelUseSpeed: 5
+  _currentFuel: 0
+  _curentPower: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048182101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.0823, y: -5.1, z: 0}
+  m_LocalPosition: {x: 10.0823, y: 1.5, z: 0}
   m_LocalScale: {x: 12.3104, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1105,7 +1111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140696790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.9596, y: 31.606, z: 0}
+  m_LocalPosition: {x: -27.6, y: 31.606, z: 0}
   m_LocalScale: {x: 1.2130866, y: 8.168324, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

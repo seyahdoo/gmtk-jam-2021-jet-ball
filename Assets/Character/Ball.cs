@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Ball : MonoBehaviour {
@@ -16,12 +17,14 @@ public class Ball : MonoBehaviour {
     public float powerFillSpeed = 5f;
     public float flingMultiplier = 1f;
     public float maxPower = 5f;
-    
     public float maxFuel = 10f;
+    public float fuelFillSpeed = 5f;
     public float inputToForceRatio = 1f;
-    private float _currentFuel;
+    public float fuelUseSpeed = 3;
+
     private float _distance;
-    [SerializeField] private float _power = 0f;
+    [SerializeField] private float _currentFuel;
+    [SerializeField] private float _curentPower = 0f;
     private void OnEnable() {
         inputSettings.Enable();
     }
@@ -47,25 +50,31 @@ public class Ball : MonoBehaviour {
         if (stickButtonPressed) {
             body.velocity = Vector2.zero;
             body.angularVelocity = 0f;
-            _power = 0f;
+            _curentPower = 0f;
+            _currentFuel += fuelFillSpeed;
+            _currentFuel = Mathf.Clamp(_currentFuel, 0f, maxFuel);
             body.isKinematic = true;
         }
         else {
             var currentDistance = Vector3.Distance(body.position, otherBody.position);
             if (Mathf.Abs(currentDistance - _distance) < powerDistanceError 
                 && Vector2.Dot((otherBody.position - body.position).normalized, input.normalized) < 0) {
-                _power += powerFillSpeed * Time.fixedDeltaTime;
-                _power = Mathf.Clamp(_power, 0f, maxPower);
+                _curentPower += powerFillSpeed * Time.fixedDeltaTime;
+                _curentPower = Mathf.Clamp(_curentPower, 0f, maxPower);
             }
             else {
-                if (_power > .1f) {
-                    body.AddForce((otherBody.position - body.position).normalized * (_power * flingMultiplier), ForceMode2D.Impulse);
-                    _power = 0f;
+                if (_curentPower > .1f) {
+                    body.AddForce((otherBody.position - body.position).normalized * (_curentPower * flingMultiplier), ForceMode2D.Impulse);
+                    _curentPower = 0f;
                 }
             }
+            _currentFuel -= input.magnitude * fuelUseSpeed * Time.fixedDeltaTime;
+            _currentFuel = Mathf.Clamp(_currentFuel, 0, maxFuel);
             body.isKinematic = false;
-            var force = input * inputToForceRatio;
-            body.AddForce(force);
+            if (_currentFuel > 0.1f) {
+                var force = input * inputToForceRatio;
+                body.AddForce(force);
+            }
         }
     }
 }
