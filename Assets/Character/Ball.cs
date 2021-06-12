@@ -12,6 +12,7 @@ public class Ball : MonoBehaviour {
     public float inputToForceRatio = 1f;
     public LayerMask stickableLayers;
     public Ball otherBall;
+    public BallGraphic BallGraphic;
     
     private HashSet<Collider2D> _stickableSurfaces = new HashSet<Collider2D>();
     private bool _sticked = false;
@@ -41,10 +42,12 @@ public class Ball : MonoBehaviour {
             body.angularVelocity = 0f;
             body.isKinematic = true;
             _sticked = true;
+            BallGraphic.sticking = true;
         }
         else {
             body.isKinematic = false;
             _sticked = false;
+            BallGraphic.sticking = false;
             if (otherBall.Sticked) {
                 var force = input * inputToForceRatio;
                 body.AddForce(force);
