@@ -22,4 +22,5 @@ public class GameSettings : ScriptableObject {
     [Header("Audio Settings")]
     public AudioClip stickClip;
     public AudioClip crashClip;
+    public AudioClip deadClip;
 }

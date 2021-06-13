@@ -5,17 +5,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(AudioSource))]
 public class Ball : MonoBehaviour {
     public bool isLeft = false;
     public Vector2 input = Vector2.zero;
     public bool stickButtonPressed = false;
     public GameSettings gameSettings;
     public Ball otherBall;
+    public AudioSource crashStickAudioSource;
+    public AudioSource deadAudioSource;
     
     private Rigidbody2D _body;
     private BallGraphic _ballGraphic;
-    private AudioSource _audioSource;
     private HashSet<Collider2D> _stickableSurfaces = new HashSet<Collider2D>();
     private bool _sticked = false;
     private bool _dead;
@@ -28,7 +28,6 @@ public class Ball : MonoBehaviour {
     }
     private void Awake() {
         gameSettings.inputSettings = new InputSettings();
-        _audioSource = GetComponent<AudioSource>();
         _ballGraphic = GetComponentInChildren<BallGraphic>();
         _body = GetComponent<Rigidbody2D>();
     }
@@ -51,7 +50,7 @@ public class Ball : MonoBehaviour {
             _body.velocity = Vector2.zero;
             _body.angularVelocity = 0f;
             if (_sticked == false) {
-                _audioSource.PlayOneShot(gameSettings.stickClip);
+                crashStickAudioSource.PlayOneShot(gameSettings.stickClip);
             }
             _sticked = true;
             _body.isKinematic = true;
@@ -72,6 +71,7 @@ public class Ball : MonoBehaviour {
         _dead = true;
         otherBall.OtherDead();
         _ballGraphic.Death();
+        deadAudioSource.PlayOneShot(gameSettings.deadClip);
         Invoke(nameof(ResetLevel), gameSettings.gameResetDelay);
     }
     private void OtherDead() {
@@ -84,7 +84,7 @@ public class Ball : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.relativeVelocity.magnitude > gameSettings.impactToTriggerCrash) {
             _ballGraphic.Crashed();
-            _audioSource.PlayOneShot(gameSettings.crashClip);
+            crashStickAudioSource.PlayOneShot(gameSettings.crashClip);
         }
     }
     private void OnTriggerEnter2D(Collider2D other) {

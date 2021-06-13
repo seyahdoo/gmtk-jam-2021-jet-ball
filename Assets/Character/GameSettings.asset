@@ -19,9 +19,8 @@ MonoBehaviour:
   deadlyLayers:
     serializedVersion: 2
     m_Bits: 128
-  stickClip: {fileID: 8300000, guid: 2f48990970bfc29409f592f6697ef297, type: 3}
-  crashClip: {fileID: 8300000, guid: 0b92ac579e6f6e74da23b19603172cc7, type: 3}
   impactToTriggerCrash: 15
+  gameResetDelay: 2
   stickSprites:
   - {fileID: 21300000, guid: 60624b8f9a8caa44c955674e125954d1, type: 3}
   crashedSprites:
@@ -36,3 +35,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a00bef819d904a648b046fada6250a8f, type: 3}
   spriteChangeTime: 1
   crashStateTime: 0.4
+  stickClip: {fileID: 8300000, guid: 2f48990970bfc29409f592f6697ef297, type: 3}
+  crashClip: {fileID: 8300000, guid: 0b92ac579e6f6e74da23b19603172cc7, type: 3}
+  deadClip: {fileID: 8300000, guid: 3382775f49997a34a94f18bac6369ea5, type: 3}
