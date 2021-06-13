@@ -39,13 +39,13 @@ public class BallGraphic : MonoBehaviour {
         _nextChangeTime = Time.time + changeTime;
         spriteRenderer.sprite = PickRandomFromArray(crashedSprites);
     }
-    public Sprite PickRandomFromArray(Sprite[] array) {
-        return array[Random.Range(0, array.Length)];
-    }
     public void Death() {
         
     }
     public void Shocked() {
         
+    }
+    private Sprite PickRandomFromArray(Sprite[] array) {
+        return array[Random.Range(0, array.Length)];
     }
 }
