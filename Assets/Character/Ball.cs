@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using LapsRuntime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(AudioSource))]
@@ -42,6 +43,7 @@ public class Ball : MonoBehaviour {
         }
     }
     private void FixedUpdate() {
+        if (_dead) return;
         if (stickButtonPressed && _stickableSurfaces.Count >= 1) {
             _body.velocity = Vector2.zero;
             _body.angularVelocity = 0f;
@@ -67,10 +69,14 @@ public class Ball : MonoBehaviour {
         _dead = true;
         otherBall.OtherDead();
         _ballGraphic.Death();
+        Invoke(nameof(ResetLevel), gameSettings.gameResetDelay);
     }
     private void OtherDead() {
         _dead = true;
         _ballGraphic.Shocked();
+    }
+    private void ResetLevel() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.relativeVelocity.magnitude > gameSettings.impactToTriggerCrash) {

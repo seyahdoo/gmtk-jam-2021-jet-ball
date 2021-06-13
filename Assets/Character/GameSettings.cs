@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using LapsRuntime;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -11,6 +8,7 @@ public class GameSettings : ScriptableObject {
     public LayerMask deadlyLayers;
     public float impactToTriggerCrash = 15f;
     public InputSettings inputSettings;
+    public float gameResetDelay = 2f;
 
     [Header("Player Render Settings")]
     public Sprite[] stickSprites;
@@ -24,5 +22,4 @@ public class GameSettings : ScriptableObject {
     [Header("Audio Settings")]
     public AudioClip stickClip;
     public AudioClip crashClip;
-    
 }
