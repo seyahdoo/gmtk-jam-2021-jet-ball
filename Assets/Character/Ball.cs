@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using LapsRuntime;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Ball : MonoBehaviour {
@@ -13,8 +14,11 @@ public class Ball : MonoBehaviour {
     public float inputToForceRatio = 1f;
     public LayerMask stickableLayers;
     public Ball otherBall;
-    public BallGraphic BallGraphic;
+    public BallGraphic ballGraphic;
     public float impactToTriggerCrash = 1f;
+    public AudioClip crashClip;
+    public AudioClip stickClip;
+    public AudioSource audioSource;
     
     private HashSet<Collider2D> _stickableSurfaces = new HashSet<Collider2D>();
     private bool _sticked = false;
@@ -42,14 +46,17 @@ public class Ball : MonoBehaviour {
         if (stickButtonPressed && _stickableSurfaces.Count >= 1) {
             body.velocity = Vector2.zero;
             body.angularVelocity = 0f;
-            body.isKinematic = true;
+            if (_sticked == false) {
+                audioSource.PlayOneShot(stickClip);
+            }
             _sticked = true;
-            BallGraphic.sticking = true;
+            body.isKinematic = true;
+            ballGraphic.sticking = true;
         }
         else {
-            body.isKinematic = false;
             _sticked = false;
-            BallGraphic.sticking = false;
+            body.isKinematic = false;
+            ballGraphic.sticking = false;
             if (otherBall.Sticked) {
                 var force = input * inputToForceRatio;
                 body.AddForce(force);
@@ -58,7 +65,8 @@ public class Ball : MonoBehaviour {
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.relativeVelocity.magnitude > impactToTriggerCrash) {
-            BallGraphic.Crashed();
+            ballGraphic.Crashed();
+            audioSource.PlayOneShot(crashClip);
         }
     }
     private void OnTriggerEnter2D(Collider2D other) {
