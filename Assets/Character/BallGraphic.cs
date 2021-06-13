@@ -5,6 +5,8 @@ public class BallGraphic : MonoBehaviour {
     public Sprite[] stickSprites;
     public Sprite[] crashedSprites;
     public Sprite[] neutralSprites;
+    public Sprite[] deadSprites;
+    public Sprite[] shockedSprites;
     public float changeTime = 1f;
     public float crashStateTime = .4f;
     public bool sticking;
@@ -39,5 +41,11 @@ public class BallGraphic : MonoBehaviour {
     }
     public Sprite PickRandomFromArray(Sprite[] array) {
         return array[Random.Range(0, array.Length)];
+    }
+    public void Death() {
+        
+    }
+    public void Shocked() {
+        
     }
 }
