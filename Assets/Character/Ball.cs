@@ -32,16 +32,24 @@ public class Ball : MonoBehaviour {
         _body = GetComponent<Rigidbody2D>();
     }
     private void Update() {
-        if (isLeft) {
-            input = gameSettings.inputSettings.Character.LeftMovement.ReadValue<Vector2>();
-            stickButtonPressed = Math.Abs(gameSettings.inputSettings.Character.LeftStick.ReadValue<float>() - 1) < .1f;
-        }
-        else {
-            input = gameSettings.inputSettings.Character.RightMovement.ReadValue<Vector2>();
-            stickButtonPressed = Math.Abs(gameSettings.inputSettings.Character.RightStick.ReadValue<float>() - 1) < .1f;
-        }
         #if !UNITY_EDITOR && UNITY_WEBGL
-            input.y = -input.y;
+            if (isLeft) {
+                input = gameSettings.inputSettings.Character.LeftMovementWebGL.ReadValue<Vector2>();
+                stickButtonPressed = Math.Abs(gameSettings.inputSettings.Character.LeftStick.ReadValue<float>() - 1) < .1f;
+            }
+            else {
+                input = gameSettings.inputSettings.Character.RightMovementWebGL.ReadValue<Vector2>();
+                stickButtonPressed = Math.Abs(gameSettings.inputSettings.Character.RightStick.ReadValue<float>() - 1) < .1f;
+            }
+        #else
+            if (isLeft) {
+                input = gameSettings.inputSettings.Character.LeftMovementPC.ReadValue<Vector2>();
+                stickButtonPressed = Math.Abs(gameSettings.inputSettings.Character.LeftStick.ReadValue<float>() - 1) < .1f;
+            }
+            else {
+                input = gameSettings.inputSettings.Character.LeftMovementPC.ReadValue<Vector2>();
+                stickButtonPressed = Math.Abs(gameSettings.inputSettings.Character.RightStick.ReadValue<float>() - 1) < .1f;
+            }
         #endif
     }
     private void FixedUpdate() {

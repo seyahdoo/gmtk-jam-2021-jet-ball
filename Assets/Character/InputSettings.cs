@@ -19,11 +19,19 @@ public class @InputSettings : IInputActionCollection, IDisposable
             ""id"": ""da63bf3a-f27c-4796-9879-fca5a10cad00"",
             ""actions"": [
                 {
-                    ""name"": ""LeftMovement"",
+                    ""name"": ""LeftMovementPC"",
                     ""type"": ""Value"",
                     ""id"": ""cb3893b7-ff0a-4f28-a846-27ec7b8f5b9e"",
                     ""expectedControlType"": ""Axis"",
-                    ""processors"": ""AxisDeadzone"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LeftMovementWebGL"",
+                    ""type"": ""Value"",
+                    ""id"": ""22a25dcd-3da1-4da2-aba5-cdf50d82032c"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
                     ""interactions"": """"
                 },
                 {
@@ -35,11 +43,19 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""RightMovement"",
+                    ""name"": ""RightMovementPC"",
                     ""type"": ""Button"",
                     ""id"": ""c2856e98-3352-4268-a9e6-55fca7e95d8a"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": ""AxisDeadzone"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RightMovementWebGL"",
+                    ""type"": ""Button"",
+                    ""id"": ""26b3b8c9-98c1-47fe-b59d-701bf56afd4e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
                     ""interactions"": """"
                 },
                 {
@@ -88,11 +104,11 @@ public class @InputSettings : IInputActionCollection, IDisposable
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""94fbbb1e-a1fb-46c8-b74e-b48b43af212d"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""AxisDeadzone"",
                     ""groups"": """",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -103,7 +119,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -114,7 +130,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -125,7 +141,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -136,7 +152,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -147,7 +163,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -158,7 +174,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -169,7 +185,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -180,7 +196,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -191,7 +207,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""LeftMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -202,7 +218,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -213,7 +229,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -224,7 +240,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -235,7 +251,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -246,18 +262,18 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""3be04923-6138-46aa-b5ae-805127490add"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""AxisDeadzone"",
                     ""groups"": """",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -268,7 +284,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -279,7 +295,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -290,7 +306,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -301,7 +317,7 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joypad"",
-                    ""action"": ""RightMovement"",
+                    ""action"": ""RightMovementPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -337,6 +353,226 @@ public class @InputSettings : IInputActionCollection, IDisposable
                     ""action"": ""RightStick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""574b29dc-6028-4c34-bca0-0f3e5850119a"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""80f21d0e-3974-4e74-a2e8-6910d8019e13"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""5db566e6-8ff2-4516-8163-575e3c00a113"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""74c628b3-30d0-4468-8f3c-35b6a099d23f"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4df1ad5b-fe3e-4023-ae72-b786cd9d0dc6"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""a40ff82f-6aae-43e4-b1a8-a75cabfb4368"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f07ffe9a-e81e-4b58-b537-31b4a2e36be8"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e19c8c53-d041-44b1-87ba-691596fd496d"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e0800f30-c6fe-48f3-895f-b36868d43044"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""39d157f8-a8d4-4bfe-8c98-8e5d9ecd1f55"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LeftMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""080afad4-0d14-47fc-863c-25844b89d50c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b11970e0-6de1-438b-9ce5-48b40e9d6d02"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""090cf0c1-29ff-4313-b6fc-6d19b70e4dd8"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""77ebef9b-a2f5-462d-a8b9-a7ebd8aa3d6f"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a6044d8a-32c5-4ef7-8a21-3e6dcd9fbc1b"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""0b9d1370-a1db-4b91-98e2-4c9e2ce7c74f"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6c92b7d0-690f-4e49-8d05-5662fe83df0d"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""843b338a-3070-45a3-8ff6-b7ce4d1a1dde"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""fc44dcce-0727-4986-ba52-bded4a9e0699"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""337eaefe-88e0-4e89-8bfd-c0d4c324823f"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joypad"",
+                    ""action"": ""RightMovementWebGL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -368,9 +604,11 @@ public class @InputSettings : IInputActionCollection, IDisposable
 }");
         // Character
         m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
-        m_Character_LeftMovement = m_Character.FindAction("LeftMovement", throwIfNotFound: true);
+        m_Character_LeftMovementPC = m_Character.FindAction("LeftMovementPC", throwIfNotFound: true);
+        m_Character_LeftMovementWebGL = m_Character.FindAction("LeftMovementWebGL", throwIfNotFound: true);
         m_Character_LeftStick = m_Character.FindAction("LeftStick", throwIfNotFound: true);
-        m_Character_RightMovement = m_Character.FindAction("RightMovement", throwIfNotFound: true);
+        m_Character_RightMovementPC = m_Character.FindAction("RightMovementPC", throwIfNotFound: true);
+        m_Character_RightMovementWebGL = m_Character.FindAction("RightMovementWebGL", throwIfNotFound: true);
         m_Character_RightStick = m_Character.FindAction("RightStick", throwIfNotFound: true);
     }
 
@@ -421,17 +659,21 @@ public class @InputSettings : IInputActionCollection, IDisposable
     // Character
     private readonly InputActionMap m_Character;
     private ICharacterActions m_CharacterActionsCallbackInterface;
-    private readonly InputAction m_Character_LeftMovement;
+    private readonly InputAction m_Character_LeftMovementPC;
+    private readonly InputAction m_Character_LeftMovementWebGL;
     private readonly InputAction m_Character_LeftStick;
-    private readonly InputAction m_Character_RightMovement;
+    private readonly InputAction m_Character_RightMovementPC;
+    private readonly InputAction m_Character_RightMovementWebGL;
     private readonly InputAction m_Character_RightStick;
     public struct CharacterActions
     {
         private @InputSettings m_Wrapper;
         public CharacterActions(@InputSettings wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftMovement => m_Wrapper.m_Character_LeftMovement;
+        public InputAction @LeftMovementPC => m_Wrapper.m_Character_LeftMovementPC;
+        public InputAction @LeftMovementWebGL => m_Wrapper.m_Character_LeftMovementWebGL;
         public InputAction @LeftStick => m_Wrapper.m_Character_LeftStick;
-        public InputAction @RightMovement => m_Wrapper.m_Character_RightMovement;
+        public InputAction @RightMovementPC => m_Wrapper.m_Character_RightMovementPC;
+        public InputAction @RightMovementWebGL => m_Wrapper.m_Character_RightMovementWebGL;
         public InputAction @RightStick => m_Wrapper.m_Character_RightStick;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
@@ -442,15 +684,21 @@ public class @InputSettings : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_CharacterActionsCallbackInterface != null)
             {
-                @LeftMovement.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovement;
-                @LeftMovement.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovement;
-                @LeftMovement.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovement;
+                @LeftMovementPC.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovementPC;
+                @LeftMovementPC.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovementPC;
+                @LeftMovementPC.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovementPC;
+                @LeftMovementWebGL.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovementWebGL;
+                @LeftMovementWebGL.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovementWebGL;
+                @LeftMovementWebGL.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftMovementWebGL;
                 @LeftStick.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftStick;
                 @LeftStick.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftStick;
                 @LeftStick.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnLeftStick;
-                @RightMovement.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovement;
-                @RightMovement.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovement;
-                @RightMovement.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovement;
+                @RightMovementPC.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovementPC;
+                @RightMovementPC.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovementPC;
+                @RightMovementPC.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovementPC;
+                @RightMovementWebGL.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovementWebGL;
+                @RightMovementWebGL.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovementWebGL;
+                @RightMovementWebGL.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightMovementWebGL;
                 @RightStick.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightStick;
                 @RightStick.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightStick;
                 @RightStick.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRightStick;
@@ -458,15 +706,21 @@ public class @InputSettings : IInputActionCollection, IDisposable
             m_Wrapper.m_CharacterActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @LeftMovement.started += instance.OnLeftMovement;
-                @LeftMovement.performed += instance.OnLeftMovement;
-                @LeftMovement.canceled += instance.OnLeftMovement;
+                @LeftMovementPC.started += instance.OnLeftMovementPC;
+                @LeftMovementPC.performed += instance.OnLeftMovementPC;
+                @LeftMovementPC.canceled += instance.OnLeftMovementPC;
+                @LeftMovementWebGL.started += instance.OnLeftMovementWebGL;
+                @LeftMovementWebGL.performed += instance.OnLeftMovementWebGL;
+                @LeftMovementWebGL.canceled += instance.OnLeftMovementWebGL;
                 @LeftStick.started += instance.OnLeftStick;
                 @LeftStick.performed += instance.OnLeftStick;
                 @LeftStick.canceled += instance.OnLeftStick;
-                @RightMovement.started += instance.OnRightMovement;
-                @RightMovement.performed += instance.OnRightMovement;
-                @RightMovement.canceled += instance.OnRightMovement;
+                @RightMovementPC.started += instance.OnRightMovementPC;
+                @RightMovementPC.performed += instance.OnRightMovementPC;
+                @RightMovementPC.canceled += instance.OnRightMovementPC;
+                @RightMovementWebGL.started += instance.OnRightMovementWebGL;
+                @RightMovementWebGL.performed += instance.OnRightMovementWebGL;
+                @RightMovementWebGL.canceled += instance.OnRightMovementWebGL;
                 @RightStick.started += instance.OnRightStick;
                 @RightStick.performed += instance.OnRightStick;
                 @RightStick.canceled += instance.OnRightStick;
@@ -494,9 +748,11 @@ public class @InputSettings : IInputActionCollection, IDisposable
     }
     public interface ICharacterActions
     {
-        void OnLeftMovement(InputAction.CallbackContext context);
+        void OnLeftMovementPC(InputAction.CallbackContext context);
+        void OnLeftMovementWebGL(InputAction.CallbackContext context);
         void OnLeftStick(InputAction.CallbackContext context);
-        void OnRightMovement(InputAction.CallbackContext context);
+        void OnRightMovementPC(InputAction.CallbackContext context);
+        void OnRightMovementWebGL(InputAction.CallbackContext context);
         void OnRightStick(InputAction.CallbackContext context);
     }
 }
