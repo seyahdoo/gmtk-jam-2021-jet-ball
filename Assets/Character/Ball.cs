@@ -41,8 +41,8 @@ public class Ball : MonoBehaviour {
             input = gameSettings.inputSettings.Character.RightMovement.ReadValue<Vector2>();
             stickButtonPressed = Math.Abs(gameSettings.inputSettings.Character.RightStick.ReadValue<float>() - 1) < .1f;
         }
-        #if UNITY_WEBGL
-            input.x = -input.x;
+        #if !UNITY_EDITOR && UNITY_WEBGL
+            input.y = -input.y;
         #endif
     }
     private void FixedUpdate() {
