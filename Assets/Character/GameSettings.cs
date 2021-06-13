@@ -6,6 +6,7 @@ public class GameSettings : ScriptableObject {
     public float inputToForceRatio = 60f;
     public LayerMask stickableLayers;
     public LayerMask deadlyLayers;
+    public LayerMask winLayers;
     public float impactToTriggerCrash = 15f;
     public InputSettings inputSettings;
     public float gameResetDelay = 2f;
@@ -16,6 +17,7 @@ public class GameSettings : ScriptableObject {
     public Sprite[] neutralSprites;
     public Sprite[] deadSprites;
     public Sprite[] shockedSprites;
+    public Sprite[] winSprites;
     public float spriteChangeTime = 1f;
     public float crashStateTime = .4f;
     

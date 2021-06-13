@@ -14,6 +14,7 @@ public class BallGraphic : MonoBehaviour {
         Dead,
         Shocked,
         Neutral,
+        Win,
     }
     private void Awake() {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -42,6 +43,9 @@ public class BallGraphic : MonoBehaviour {
                 case State.Neutral:
                     _spriteRenderer.sprite = PickRandomFromArray(gameSettings.neutralSprites);
                     break;
+                case State.Win:
+                    _spriteRenderer.sprite = PickRandomFromArray(gameSettings.winSprites);
+                    break;
             }
         }
     }
@@ -55,6 +59,10 @@ public class BallGraphic : MonoBehaviour {
     }
     public void Shocked() {
         _state = State.Shocked;
+        _nextChangeTime = Time.time;
+    }
+    public void Win() {
+        _state = State.Win;
         _nextChangeTime = Time.time;
     }
     private Sprite PickRandomFromArray(Sprite[] array) {

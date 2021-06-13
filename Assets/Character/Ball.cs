@@ -78,6 +78,10 @@ public class Ball : MonoBehaviour {
         _dead = true;
         _ballGraphic.Shocked();
     }
+    private void Win() {
+        _ballGraphic.Win();
+        otherBall._ballGraphic.Win();
+    }
     private void ResetLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -93,6 +97,9 @@ public class Ball : MonoBehaviour {
         }
         if (LapsMath.LayerMaskContains(gameSettings.deadlyLayers, other.gameObject.layer)) {
             Death();
+        }
+        if (LapsMath.LayerMaskContains(gameSettings.winLayers, other.gameObject.layer)) {
+            Win();
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
