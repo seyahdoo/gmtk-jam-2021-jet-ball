@@ -709,6 +709,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5331815927353152254, guid: 3490eb6cd64405640b2285c6f252e433, type: 3}
+      propertyPath: shockedSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331815927353152254, guid: 3490eb6cd64405640b2285c6f252e433, type: 3}
+      propertyPath: shockedSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: a00bef819d904a648b046fada6250a8f, type: 3}
     - target: {fileID: 5331815928587349588, guid: 3490eb6cd64405640b2285c6f252e433, type: 3}
       propertyPath: m_Name
       value: GameSetup

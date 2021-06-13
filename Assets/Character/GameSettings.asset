@@ -22,3 +22,17 @@ MonoBehaviour:
   stickClip: {fileID: 8300000, guid: 2f48990970bfc29409f592f6697ef297, type: 3}
   crashClip: {fileID: 8300000, guid: 0b92ac579e6f6e74da23b19603172cc7, type: 3}
   impactToTriggerCrash: 15
+  stickSprites:
+  - {fileID: 21300000, guid: 60624b8f9a8caa44c955674e125954d1, type: 3}
+  crashedSprites:
+  - {fileID: 21300000, guid: 6d58153c2597de04a8ac57da5844e166, type: 3}
+  neutralSprites:
+  - {fileID: 21300000, guid: e7520dc2d9fe21f4881b37ebbba0fcd9, type: 3}
+  - {fileID: 21300000, guid: 98ba11ad6e4a9ba41acfcf468f04beff, type: 3}
+  - {fileID: 21300000, guid: cb51d05e2e194904e83f7bb8ddb56814, type: 3}
+  deadSprites:
+  - {fileID: 21300000, guid: 05f0fdc569eae744dbc519321c032f4a, type: 3}
+  shockedSprites:
+  - {fileID: 21300000, guid: a00bef819d904a648b046fada6250a8f, type: 3}
+  spriteChangeTime: 1
+  crashStateTime: 0.4
