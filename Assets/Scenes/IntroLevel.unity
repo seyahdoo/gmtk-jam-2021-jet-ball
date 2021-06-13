@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.1, y: -4.5}
+  m_AnchoredPosition: {x: 6.07, y: -4.72}
   m_SizeDelta: {x: 162.3469, y: 60.1176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529663926
@@ -1074,7 +1074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2, y: -4.5}
+  m_AnchoredPosition: {x: -0.43, y: -4.06}
   m_SizeDelta: {x: 162.3469, y: 60.1176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839067673
@@ -1210,8 +1210,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.94, y: -3.11}
-  m_SizeDelta: {x: 162.3469, y: 60.1176}
+  m_AnchoredPosition: {x: 11.92, y: -3.75}
+  m_SizeDelta: {x: 191.8951, y: 60.1176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1982077420
 MonoBehaviour:
@@ -1233,9 +1233,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sound Designer Name Here
+  m_text: 'Nathanael Hueso
 
-    @jqckdaw'
+    @nxhueso'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
