@@ -20,6 +20,10 @@ namespace LapsEditor {
             lapsEditorSelectionModule = new LapsEditorSelectionModule(this);
             lapsEditorLogicModule = new LapsEditorLogicModule(this);
             SceneView.duringSceneGui += SceneGUI;
+            EditorApplication.playModeStateChanged += EditorApplicationOnPlayModeStateChanged;
+        }
+        private void EditorApplicationOnPlayModeStateChanged(PlayModeStateChange state) {
+            lapsEditorLogicModule.Reset();
         }
         private void SceneGUI(SceneView obj) {
             //todo optimize this
