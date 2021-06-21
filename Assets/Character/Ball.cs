@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour {
     public Ball otherBall;
     public AudioSource crashStickAudioSource;
     public AudioSource deadAudioSource;
+    public SpringJoint2D spring;
     
     private Rigidbody2D _body;
     private BallGraphic _ballGraphic;
@@ -55,19 +56,29 @@ public class Ball : MonoBehaviour {
     private void FixedUpdate() {
         if (_dead) return;
         if (stickButtonPressed && _stickableSurfaces.Count >= 1) {
-            _body.velocity = Vector2.zero;
-            _body.angularVelocity = 0f;
-            if (_sticked == false) {
-                crashStickAudioSource.PlayOneShot(gameSettings.stickClip);
+            var e = _stickableSurfaces.GetEnumerator();
+            e.MoveNext();
+            var stickingSurface = e.Current;
+            e.Dispose();
+            if (stickingSurface != null) {
+                if (!_sticked) {
+                    _sticked = true;
+                    crashStickAudioSource.PlayOneShot(gameSettings.stickClip);
+                    _ballGraphic.sticking = true;
+                    var stickWorldPoint = stickingSurface.ClosestPoint(_body.position);
+                    spring.anchor = transform.InverseTransformPoint(stickWorldPoint);
+                    spring.connectedAnchor = stickWorldPoint;
+                    spring.enabled = true;
+                    // EditorApplication.isPaused = true;
+                }
             }
-            _sticked = true;
-            _body.isKinematic = true;
-            _ballGraphic.sticking = true;
         }
         else {
-            _sticked = false;
-            _body.isKinematic = false;
-            _ballGraphic.sticking = false;
+            if (_sticked && !stickButtonPressed) {
+                _sticked = false;
+                _ballGraphic.sticking = false;
+                spring.enabled = false;
+            }
             if (otherBall.Sticked) {
                 var force = input * gameSettings.inputToForceRatio;
                 _body.AddForce(force);

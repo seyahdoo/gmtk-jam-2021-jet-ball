@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 864324561}
   - component: {fileID: 864324563}
   - component: {fileID: 3602560050116688352}
+  - component: {fileID: 2068876726}
   m_Layer: 0
-  m_Name: fx_lose_1
+  m_Name: fx_lose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,6 +130,24 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!114 &3602560050116688352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864324560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789c075af9605bf49a448f19e13f37c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connections: []
+  startClips:
+  - {fileID: 8300000, guid: 3382775f49997a34a94f18bac6369ea5, type: 3}
+  loopClips: []
+  endClips: []
+  playOnAwake: 0
+--- !u!114 &2068876726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,7 +292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6924434540505554146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.145813, y: 1.1599431, z: 5.7315784}
+  m_LocalPosition: {x: 2.2053375, y: 1.3318996, z: 5.7315784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6924434541452328939}
@@ -304,6 +323,7 @@ GameObject:
   - component: {fileID: 6924434540790919922}
   - component: {fileID: 6924434540790919921}
   - component: {fileID: 2529588686278194160}
+  - component: {fileID: 2068876727}
   m_Layer: 8
   m_Name: square (3)
   m_TagString: Untagged
@@ -421,6 +441,28 @@ MonoBehaviour:
   - sourceSlotId: 0
     targetComponent: {fileID: 3602560050116688352}
     targetSlotId: 0
+  - sourceSlotId: 0
+    targetComponent: {fileID: 6924434540943618576}
+    targetSlotId: 0
+  activationMode: 0
+  typeFilterMode: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  enabledOnAwake: 1
+--- !u!114 &2068876727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924434540790919927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2379906be3438648b65e4146afe259d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connections: []
   activationMode: 0
   typeFilterMode: 0
   layerMask:
@@ -452,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6924434540943618583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3886471, y: 0.4437728, z: 3.5211134}
+  m_LocalPosition: {x: 1.1616344, y: 1.3789845, z: 3.5211134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6924434541452328939}
@@ -474,7 +516,7 @@ MonoBehaviour:
   - sourceSlotId: 0
     targetComponent: {fileID: 6924434540505554147}
     targetSlotId: 0
-  delayAmount: 2
+  delayAmount: 2.3
 --- !u!1 &6924434541452328938
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +581,7 @@ GameObject:
   - component: {fileID: 6924434541630881524}
   - component: {fileID: 6924434541630881530}
   - component: {fileID: 3406606201589097904}
+  - component: {fileID: 2068876728}
   m_Layer: 0
   m_Name: music_win
   m_TagString: Untagged
@@ -674,6 +717,24 @@ MonoBehaviour:
   loopClips: []
   endClips: []
   playOnAwake: 0
+--- !u!114 &2068876728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924434541630881529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789c075af9605bf49a448f19e13f37c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connections: []
+  startClips:
+  - {fileID: 8300000, guid: 25dd64b511c1335499448dc392a03cef, type: 3}
+  loopClips: []
+  endClips: []
+  playOnAwake: 0
 --- !u!1 &6924434542551999005
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,9 +779,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections:
-  - sourceSlotId: 0
-    targetComponent: {fileID: 6924434540943618576}
-    targetSlotId: 0
   - sourceSlotId: 0
     targetComponent: {fileID: 3406606201589097904}
     targetSlotId: 0
