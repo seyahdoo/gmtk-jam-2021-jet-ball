@@ -12,7 +12,7 @@ public class LoadNextLevelComponent : LapsComponent {
             default: return null;
         }
     }
-    public override void GetInputSlots(List<LogicSlot> slots) {
-        slots.Add(new LogicSlot("load next level", 0));
+    public override void GetInputSlots(SlotList slots) {
+        slots.Add("load next level", 0);
     }
 }

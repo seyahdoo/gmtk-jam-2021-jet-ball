@@ -1,19 +1,21 @@
-using System.Collections.Generic;
+using UnityEngine;
 
 namespace LapsRuntime {
+    [AddComponentMenu("Laps/Logic/Get And Fire")]
+    [LapsAddMenuOptions("Logic/Get And Fire")]
     public class GetAndFire : LapsComponent {
         public override object HandleInput(int slotId, object parameter, LapsComponent eventSource) {
             switch (slotId) {
-                case 0: FireOutput(1, FireOutput(0)); return null;
+                case 0:  FireOutput(1, FireOutput(0)); return null;
                 default: return null;
             }
         }
-        public override void GetInputSlots(List<LogicSlot> slots) {
-            slots.Add(new LogicSlot("trigger", 0));
+        public override void GetInputSlots(SlotList slots) {
+            slots.Add("trigger", 0);
         }
-        public override void GetOutputSlots(List<LogicSlot> slots) {
-            slots.Add(new LogicSlot("get value", 0));
-            slots.Add(new LogicSlot("fire wire", 1));
+        public override void GetOutputSlots(SlotList slots) {
+            slots.Add("get value", 0);
+            slots.Add("fire wire", 1);
         }
     }
 }

@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace LapsRuntime {
+    [AddComponentMenu("Laps/Logic/Operator")]
+    [LapsAddMenuOptions("Logic/Operator")]
     public class Operator : LapsComponent {
         public float a;
         public float b;
@@ -35,7 +33,6 @@ namespace LapsRuntime {
                 if (!LapsMath.ApproximatelyClose(result, _lastResult)) {
                     _lastResult = result;
                     FireOutput(0, _lastResult);
-                    return;
                 }
             }
         }
@@ -59,13 +56,13 @@ namespace LapsRuntime {
                 default: return null;
             }
         }
-        public override void GetInputSlots(List<LogicSlot> slots) {
-            slots.Add(new LogicSlot("set a", 0, typeof(float)));
-            slots.Add(new LogicSlot("set b", 1, typeof(float)));
-            slots.Add(new LogicSlot("trigger", 2));
+        public override void GetInputSlots(SlotList slots) {
+            slots.Add("set a", 0, typeof(float));
+            slots.Add("set b", 1, typeof(float));
+            slots.Add("trigger", 2);
         }
-        public override void GetOutputSlots(List<LogicSlot> slots) {
-            slots.Add(new LogicSlot("output", 0, typeof(float)));
+        public override void GetOutputSlots(SlotList slots) {
+            slots.Add("output", 0, typeof(float));
         }
     }
 }

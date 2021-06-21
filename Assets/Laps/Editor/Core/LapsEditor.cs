@@ -1,15 +1,14 @@
-using System.Collections.Generic;
 using LapsRuntime;
 using UnityEditor;
-using UnityEngine;
+using UnityEditor.SceneManagement;
 
 namespace LapsEditor {
     public class LapsEditor {
-        public LapsEditorSelectionModule lapsEditorSelectionModule;
-        public LapsEditorLogicModule lapsEditorLogicModule;
+        public static LapsEditor instance;
+        public SelectionModule SelectionModule;
+        public LogicModule LogicModule;
         public LapsComponent[] allComponents;
         
-        public static LapsEditor instance;
         [InitializeOnLoadMethod]
         private static void Initialize() {
             if (instance == null) {
@@ -17,19 +16,24 @@ namespace LapsEditor {
             }
         }
         public LapsEditor() {
-            lapsEditorSelectionModule = new LapsEditorSelectionModule(this);
-            lapsEditorLogicModule = new LapsEditorLogicModule(this);
+            SelectionModule = new SelectionModule(this);
+            LogicModule = new LogicModule(this);
             SceneView.duringSceneGui += SceneGUI;
             EditorApplication.playModeStateChanged += EditorApplicationOnPlayModeStateChanged;
         }
         private void EditorApplicationOnPlayModeStateChanged(PlayModeStateChange state) {
-            lapsEditorLogicModule.Reset();
+            if (state == PlayModeStateChange.ExitingEditMode || state == PlayModeStateChange.ExitingPlayMode) {
+                LogicModule.Reset();
+            }
         }
         private void SceneGUI(SceneView obj) {
+            FindAllLapsComponents();
+            SelectionModule.OnSceneGUI();
+            LogicModule.OnSceneGUI();
+        }
+        private void FindAllLapsComponents() {
             //todo optimize this
-            allComponents = Object.FindObjectsOfType<LapsComponent>(false);
-            lapsEditorSelectionModule.OnSceneGUI();
-            lapsEditorLogicModule.OnSceneGUI();
+            allComponents = StageUtility.GetCurrentStageHandle().FindComponentsOfType<LapsComponent>();
         }
     }
 }

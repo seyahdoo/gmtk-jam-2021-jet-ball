@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace LapsRuntime {
+    [AddComponentMenu("Laps/Logic/Timer")]
+    [LapsAddMenuOptions("Logic/Timer")]
     public class Timer : LapsComponent {
         public List<float> times = new List<float>() {.5f};
         public bool startOnAwake = false;
@@ -32,13 +32,13 @@ namespace LapsRuntime {
             times.Add(time);
             enabled = true;
         }
-        public override void GetInputSlots(List<LogicSlot> slots) {
-            slots.Add(new LogicSlot("start", 0));
-            slots.Add(new LogicSlot("stop", 1));
-            slots.Add(new LogicSlot("set time", 2, typeof(float)));
+        public override void GetInputSlots(SlotList slots) {
+            slots.Add("start", 0);
+            slots.Add("stop", 1);
+            slots.Add("set time", 2, typeof(float));
         }
-        public override void GetOutputSlots(List<LogicSlot> slots) {
-            slots.Add(new LogicSlot("trigger", 0));
+        public override void GetOutputSlots(SlotList slots) {
+            slots.Add("trigger", 0);
         }
     }
 }

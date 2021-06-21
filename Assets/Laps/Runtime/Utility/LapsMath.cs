@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace LapsRuntime {
@@ -13,8 +14,22 @@ namespace LapsRuntime {
         public static bool ApproximatelyClose(float f1, float f2) {
             return Mathf.Abs(f1 - f2) < Epsilon;
         }
+        public static bool ApproximatelyClose(Vector2 v1, Vector2 v2) {
+            return Vector2.Distance(v1, v2) < Epsilon;
+        }
+        public static bool ApproximatelyClose(Vector3 v1, Vector3 v2) {
+            return Vector3.Distance(v1, v2) < Epsilon;
+        }
         public static bool LayerMaskContains(LayerMask layerMask, int layer) {
             return layerMask == (layerMask | (1 << layer));
+        }
+        public static T PickRandomFromArray<T>(T[] array) {
+            if (array.Length <= 0) return default;
+            return array[Random.Range(0, array.Length)];
+        }
+        public static T PickRandomFromList<T>(List<T> list) {
+            if (list.Count <= 0) return default;
+            return list[Random.Range(0, list.Count)];
         }
     }
 }
