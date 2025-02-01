@@ -15,6 +15,7 @@ public class Ball : MonoBehaviour {
     public AudioSource crashStickAudioSource;
     public AudioSource deadAudioSource;
     public FixedJoint2D joint;
+    public VariableJoystick joystick;
     
     private Rigidbody2D _body;
     private BallGraphic _ballGraphic;
@@ -37,23 +38,24 @@ public class Ball : MonoBehaviour {
         if (Application.isEditor) {
             if (isLeft) {
                 input = gameSettings.inputSettings.Character.LeftMovementPC.ReadValue<Vector2>();
-                stickButtonPressed = input.magnitude < 0.1f;
             }
             else {
                 input = gameSettings.inputSettings.Character.RightMovementPC.ReadValue<Vector2>();
-                stickButtonPressed = input.magnitude < 0.1f;
             }
         }
         else {
             if (isLeft) {
                 input = gameSettings.inputSettings.Character.LeftMovementWebGL.ReadValue<Vector2>();
-                stickButtonPressed = input.magnitude < 0.1f;
             }
             else {
                 input = gameSettings.inputSettings.Character.RightMovementWebGL.ReadValue<Vector2>();
-                stickButtonPressed = input.magnitude < 0.1f;
             }
         }
+        var joystickInput = new Vector2(joystick.Horizontal, joystick.Vertical);
+        if (joystickInput.magnitude > 0.1f) {
+            input = joystickInput;
+        }
+        stickButtonPressed = input.magnitude < 0.1f;
     }
     private void FixedUpdate() {
         if (_dead) return;
