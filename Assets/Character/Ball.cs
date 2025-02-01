@@ -30,7 +30,9 @@ public class Ball : MonoBehaviour {
         gameSettings.inputSettings.Disable();
     }
     private void Awake() {
-        gameSettings.inputSettings = new InputSettings();
+        if (gameSettings.inputSettings == null) {
+            gameSettings.inputSettings = new InputSettings();
+        }
         _ballGraphic = GetComponentInChildren<BallGraphic>();
         _body = GetComponent<Rigidbody2D>();
     }
