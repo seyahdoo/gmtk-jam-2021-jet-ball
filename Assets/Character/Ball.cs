@@ -58,6 +58,9 @@ public class Ball : MonoBehaviour {
             input = joystickInput;
         }
         stickButtonPressed = input.magnitude < 0.1f;
+        if (joystick.IsGettingInput) {
+            stickButtonPressed = false;
+        }
     }
     private void FixedUpdate() {
         if (_dead) return;

@@ -39,6 +39,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private Camera cam;
 
     private Vector2 input = Vector2.zero;
+    public bool IsGettingInput { get; private set; }
 
     protected virtual void Start()
     {
@@ -55,11 +56,13 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
+        IsGettingInput = false;
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
+        IsGettingInput = true;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -133,6 +136,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
+        IsGettingInput = false;
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)
