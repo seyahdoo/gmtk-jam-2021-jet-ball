@@ -11,7 +11,8 @@
                     "id": "cb3893b7-ff0a-4f28-a846-27ec7b8f5b9e",
                     "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "LeftMovementWebGL",
@@ -19,7 +20,8 @@
                     "id": "22a25dcd-3da1-4da2-aba5-cdf50d82032c",
                     "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "LeftStick",
@@ -27,23 +29,26 @@
                     "id": "2672034c-1dbc-4336-990e-3c67595395ce",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "RightMovementPC",
                     "type": "Button",
                     "id": "c2856e98-3352-4268-a9e6-55fca7e95d8a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightMovementWebGL",
                     "type": "Button",
                     "id": "26b3b8c9-98c1-47fe-b59d-701bf56afd4e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightStick",
@@ -51,7 +56,8 @@
                     "id": "7fd088be-9e4d-45dc-b935-2f2373556f1f",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

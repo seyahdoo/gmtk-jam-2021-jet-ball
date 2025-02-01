@@ -46,7 +46,7 @@ namespace LapsEditor {
                 var position = _path.points[i];
                 var size = HandleUtility.GetHandleSize(position);
                 size *= .2f;
-                position = Handles.FreeMoveHandle(position, Quaternion.identity, size, Vector3.one, Handles.SphereHandleCap);
+                var fmh_49_61_638739958901291784 = Quaternion.identity; position = Handles.FreeMoveHandle(position, size, Vector3.one, Handles.SphereHandleCap);
                 _path.points[i] = position;
             }
         }
